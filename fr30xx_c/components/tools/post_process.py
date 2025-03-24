@@ -86,9 +86,9 @@ if __name__ == '__main__':
     argv[2]: output path
     '''
 
-    input_bin_name = "%s\\%s.bin" % (sys.argv[2], sys.argv[1])
+    input_bin_name = os.path.join(sys.argv[2], sys.argv[1] + ".bin")
     if os.path.exists(input_bin_name):
-        output_bin_name = "%s\\%s_burn.bin" % (sys.argv[2], sys.argv[1])
+        output_bin_name = os.path.join(sys.argv[2], sys.argv[1] + "_burn.bin")
         fill_header(input_bin_name, output_bin_name, 0)
         print("program target with file %s" % output_bin_name)
     else:
